@@ -1,0 +1,162 @@
+* {
+	box-sizing: border-box;
+}
+html, body {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	margin-left: 1.66%;
+	border-bottom: 2px solid #f1f1f1;
+	width: 30%;
+	padding-bottom: 20px;
+	clear: both;
+}
+.container {
+	position: relative;
+	text-align: center;
+}
+.original {
+	width: 30%;
+	float: left;
+	margin: 1.66%;
+	transition-duration: 0.3s;
+}
+.original:hover {
+	transform: scale(1.07);
+	box-shadow: -2px 2px 10px rgba(0,0,0,0.3), 2px -2px 10px rgba(0,0,0,0.3), -2px -2px 10px rgba(0,0,0,0.3), 2px 2px 10px rgba(0,0,0,0.3);
+}
+.content {
+	cursor: default;
+	user-select: none;
+	position: fixed;
+	visibility: hidden;
+	z-index: 500;
+	width: 30%;
+	margin: auto 35%;
+	top: 10px;
+	font-family: 'Fredoka One', cursive;
+	font-size: 2.5em;
+	text-align: center;
+	text-shadow: 1px 1px 5px #ffffff, -1px 1px 5px #ffffff, -1px -1px 5px #ffffff, 1px -1px 5px #ffffff;
+}
+.container:hover .content {
+	visibility: visible;
+}
+.lightbox {
+	display: table;
+	position: fixed;
+	z-index: 501;
+	top: -3000px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.9);
+	transition: 1s;
+}
+.lightbox:target {
+	top: 0;
+}
+.lightbox-content {
+	display: table-cell;
+	vertical-align: middle;	
+}
+.imagebox {
+	width: 60%;
+	height: 100%;
+	float: right;
+}
+img.full-screen {
+	max-width: 100%;
+	height: 100;
+}
+.description {
+	position: absolute;
+	left: 0%;
+	bottom: 35%;
+	float: left;
+	text-align: center;
+	vertical-align: middle;
+	width: 40%;
+	color: #ffffff;
+	max-height: 75%;
+}
+.description h1 {
+	font-size: 4em;
+	margin: 0 auto;
+	width: 70%;
+	padding-bottom: 0px;
+}
+p {
+	font-family: 'Big Shoulders Stencil Text', cursive;
+	font-size: 30px;
+	max-width: 70%;
+	text-align: center;
+	margin: 10px auto;
+	white-space: pre-line;
+}
+.close {
+	position: absolute;
+	display: block;
+	bottom: 18%;
+	left: 19%;
+	width: 3em;
+	height: 3em;
+	text-decoration: none;
+	border-radius: 50%;
+	background: #f1f1f1;
+	transition: 0.2s ease-in-out;
+}
+.close:hover {
+	background: #3D3D3D;
+	transform: rotate(45deg);
+}
+.label {
+	position: absolute;
+	top: 25%;
+	text-align: center;
+	color: #3D3D3D;
+	font-size: 20px;
+	font-weight: 300;
+	opacity: 1;
+}
+.label::before {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 0.18em;
+	width: 2.1em;
+	left: 8%;
+	top: 44%;
+	background: #ffffff;
+	border-radius: 2px;
+	z-index: 502;
+	opacity: 0;
+}
+.label::after {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 2.1em;
+	width: 0.19em;
+	left: 50%;
+	top: -40%;
+	background: #ffffff;
+	border-radius: 2px;
+	z-index: 502;
+	opacity: 0;
+}
+.close:hover .label::before {
+	opacity: 1;
+}
+.close:hover .label::after {
+	opacity: 1;
+}
+/*.close:hover .close::before {
+	background: #ffffff;
+}*/
+/*.close::before:hover {
+	opacity: 1;
+}*/
